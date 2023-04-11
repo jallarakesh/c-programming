@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+int main() {
+    int n, i, j;
+    printf("Enter the number of previous terms to add: ");
+    scanf("%d", &n);
+
+    int series[n];
+    // Initialize the first n-1 terms of the series with 1
+    for (i = 0; i < n - 1; i++) {
+        series[i] = 1;
+    }
+    // Calculate the nth term of the series
+    series[n - 1] = n;
+
+    printf("The %d-Phebonacci series is:\n", n);
+    // Print the first n terms of the series
+    for (i = 0; i < n; i++) {
+        printf("%d ", series[i]);
+    }
+    // Calculate and print the remaining terms of the series
+    for (i = n; i < series[n - 1]; i++) {
+        int sum = 0;
+        for (j = i - n; j < i; j++) {
+            sum += series[j];
+        }
+        series[i] = sum;
+        printf("%d ", series[i]);
+    }
+    printf("\n");
+    return 0;
+}
