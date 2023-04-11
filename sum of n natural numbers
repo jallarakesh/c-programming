@@ -1,0 +1,13 @@
+#include<stdio.h>
+#include<math.h>
+ int main()
+{
+ int a1,a2,a3,a4;
+ printf("Given natural number:");
+scanf("%d",&a1);
+ a2=a1+1;
+ a3=a1*a2;
+ a4=a3/2;
+ printf("%d",a4);
+return 0;
+}
